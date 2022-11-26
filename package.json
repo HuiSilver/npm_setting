@@ -1,0 +1,23 @@
+{
+  "name": "npm_setting",
+  "version": "1.0.0",
+  "description": "NPM setting experience",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"여기에 스크립트를 추가합니다\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huieun0120/npm_setting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huieun0120/npm_setting/issues"
+  },
+  "homepage": "https://github.com/huieun0120/npm_setting#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
