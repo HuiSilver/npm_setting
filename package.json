@@ -17,7 +17,9 @@
     "url": "https://github.com/huieun0120/npm_setting/issues"
   },
   "homepage": "https://github.com/huieun0120/npm_setting#readme",
-  "dependencies": {
-    
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
   }
 }
