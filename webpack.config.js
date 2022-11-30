@@ -1,4 +1,5 @@
 const path = require('path');
+const MyWebpackPlugin = require('./my-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -9,11 +10,7 @@ module.exports = {
         //절대경로
         path: path.resolve('./dist'),
         filename:'[name].js',
-        publicPath:'./dist/',
-        assetModuleFileName: pathData => {
-            const filePath = path.dirname(pathData.filename).split('/').slice(1).join('/');
-            return `${filePath}/[name].[hash][ext][query]`;
-        }
+        publicPath:'./dist/'
     },
     module:{
         rules:[
@@ -34,5 +31,8 @@ module.exports = {
                   },
             }
         ]
-    }
+    },
+    plugins:[
+        new MyWebpackPlugin(),
+    ]
 }
