@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');//웹팩이 제공하는 플러그인
 const childProcess = require('child_process');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -12,7 +12,6 @@ module.exports = {
         //절대경로
         path: path.resolve('./dist'),
         filename:'[name].js',
-        publicPath:'./dist/'
     },
     module:{
         rules:[
@@ -44,6 +43,18 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             TWO : '1+1'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            templateParameters: {
+                env: process.env.NODE_ENV === 'development'? '(개발용)' :''
+            },
+            minify:process.env.NODE_ENV === 'production'? {
+                //빈칸 제거
+                collapseWhitespace: true,
+                //주석 제거
+                removeComments: true
+            } : false
         })
     ]
 }
