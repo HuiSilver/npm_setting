@@ -1,6 +1,6 @@
 const path = require('path');
-const MyWebpackPlugin = require('./my-webpack-plugin');
-
+const webpack = require('webpack');//웹팩이 제공하는 플러그인
+const childProcess = require('child_process');
 module.exports = {
     mode: 'development',
     entry:{
@@ -33,6 +33,12 @@ module.exports = {
         ]
     },
     plugins:[
-        new MyWebpackPlugin(),
+        new webpack.BannerPlugin({
+            banner:`
+                Build Date: ${new Date().toLocaleTimeString()}
+                Commit Version: ${childProcess.execSync('git rev-parse --short HEAD')}
+                Author: ${childProcess.execSync('git config user.name')}
+            `
+        })
     ]
 }
