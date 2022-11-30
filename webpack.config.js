@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');//웹팩이 제공하는 플러그인
 const childProcess = require('child_process');
+
+
 module.exports = {
     mode: 'development',
     entry:{
@@ -39,6 +41,9 @@ module.exports = {
                 Commit Version: ${childProcess.execSync('git rev-parse --short HEAD')}
                 Author: ${childProcess.execSync('git config user.name')}
             `
+        }),
+        new webpack.DefinePlugin({
+            TWO : '1+1'
         })
     ]
 }
