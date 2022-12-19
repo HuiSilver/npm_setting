@@ -23,8 +23,12 @@
     "webpack-cli": "^5.0.0"
   },
   "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "clean-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.1",
     "style-loader": "^3.3.1"
   }
 }
